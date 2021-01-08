@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Api</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <div action="" class="header">
+          <h1 class="text-center">api trivia</h1>
+          <label for="questions">Number of Questions</label>
+          <select id="questions" onchange="getQuestions()">
+            <option value="4">4</option>
+            <option value="8">8</option>
+            <option value="12">12</option>
+          </select>
+          <label for="category">Category</label>
+          <select id="category" onchange="getQuestions()">
+            <option value="9">General know</option>
+          </select>
+          <label for="difficulty">Difficulty</label>
+          <select id="difficulty" onchange="getQuestions()">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+          <label for="type">Type</label>
+          <select id="type" onchange="getQuestions()">
+            <option value="multiple">Multiple choice</option>
+            <option value="boolean">True / False</option>
+          </select>
+        </div>
+
+        <div class="card mg-top">
+          <form action="">
+            <div id="questions-container"></div>
+            <!-- <div class="card-content">
+              <h3>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Perferendis corporis nulla, magni aliquam recusandae quaerat!
+              </h3>
+              <div>
+                <input type="radio" id="input1" name="1" required />
+                <label for="input1">lorem 10</label>
+              </div>
+              <div>
+                <input type="radio" id="input2" name="1" />
+                <label for="input2">lorem 10</label>
+              </div>
+              <div>
+                <input type="radio" id="input3" name="1" />
+                <label for="input3">lorem 10</label>
+              </div>
+              <div>
+                <input type="radio" id="input4" name="1" />
+                <label for="input4">lorem 10</label>
+              </div>
+            </div>
+
+            <div class="card-content">
+              <h3>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Perferendis corporis nulla, magni aliquam recusandae quaerat!
+              </h3>
+              <div>
+                <input type="radio" id="input1" name="1" required />
+                <label for="input1">lorem 10</label>
+              </div>
+              <div>
+                <input type="radio" id="input2" name="1" />
+                <label for="input2">lorem 10</label>
+              </div>
+              <div>
+                <input type="radio" id="input3" name="1" />
+                <label for="input3">lorem 10</label>
+              </div>
+              <div>
+                <input type="radio" id="input4" name="1" />
+                <label for="input4">lorem 10</label>
+              </div>
+            </div>
+
+            <div class="card-content">
+              <h3>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Perferendis corporis nulla, magni aliquam recusandae quaerat!
+              </h3>
+              <div>
+                <input type="radio" id="input1" name="1" required />
+                <label for="input1">lorem 10</label>
+              </div>
+              <div>
+                <input type="radio" id="input2" name="1" />
+                <label for="input2">lorem 10</label>
+              </div>
+              <div>
+                <input type="radio" id="input3" name="1" />
+                <label for="input3">lorem 10</label>
+              </div>
+              <div>
+                <input type="radio" id="input4" name="1" />
+                <label for="input4">lorem 10</label>
+              </div>
+            </div> -->
+
+            <div class="text-center">
+              <button type="submit" class="btn">Send</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
