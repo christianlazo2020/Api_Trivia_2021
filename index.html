@@ -18,14 +18,13 @@
           <h1 class="text-center">api trivia</h1>
           <label for="questions">Number of Questions</label>
           <select id="questions" onchange="getQuestions()">
+            <option value="2">2</option>
             <option value="4">4</option>
             <option value="8">8</option>
-            <option value="12">12</option>
+            <option value="10">10</option>
           </select>
           <label for="category">Category</label>
-          <select id="category" onchange="getQuestions()">
-            <option value="9">General know</option>
-          </select>
+          <select id="category" onchange="getQuestions()"></select>
           <label for="difficulty">Difficulty</label>
           <select id="difficulty" onchange="getQuestions()">
             <option value="easy">Easy</option>
