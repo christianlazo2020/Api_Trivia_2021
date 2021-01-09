@@ -1,3 +1,7 @@
+/*Globals*/
+let ansCorrect = [];
+let goods = 0;
+
 function getQuestions() {
   event.preventDefault();
   const numberQuestions = document.getElementById("questions").value;
@@ -15,6 +19,8 @@ function getQuestions() {
 function printData(data) {
   let container = document.getElementById("questions-container");
   container.innerHTML = "";
+  ansCorrect = [];
+  goods = 0;
 
   data.forEach((element, index) => {
     container.innerHTML += cardHTML(element, index);
@@ -32,7 +38,7 @@ function cardHTML(element, index) {
 
 function answeres(correct, incorrect, ind) {
   let ram = random();
-
+  ansCorrect.push(ram);
   incorrect.splice(ram, 0, correct);
 
   let getAnsweres = "";
@@ -48,5 +54,53 @@ function answeres(correct, incorrect, ind) {
 }
 
 function random() {
-  return Math.floor(Math.random() * (4 - 1)) + 0;
+  const type = document.getElementById("type").value;
+
+  if (type === "multiple") {
+    return Math.floor(Math.random() * (4 - 1)) + 0;
+  } else if (type === "boolean") {
+    return Math.floor(Math.random() * (2 - 1)) + 0;
+  }
+}
+
+function veritify() {
+  event.preventDefault();
+  const type = document.getElementById("type").value;
+  const numberQuestions = document.getElementById("questions").value;
+  let answer = [];
+
+  if (type === "multiple") {
+    for (let i = 0; i < numberQuestions; i++) {
+      var id = "";
+      for (let j = 0; j < 4; j++) {
+        id = document.getElementById(JSON.stringify(i) + JSON.stringify(j));
+        // console.log(i + " " + j);
+        console.log(id);
+        if (id.checked === true) {
+          console.log("entro");
+          if (ansCorrect[i] === j) {
+            goods++;
+          }
+        }
+      }
+    }
+  } else if (type === "boolean") {
+    for (let i = 0; i < numberQuestions; i++) {
+      var id = "";
+      for (let j = 0; j < 2; j++) {
+        id = document.getElementById(JSON.stringify(i) + JSON.stringify(j));
+        // console.log(i + " " + j);
+        console.log(id);
+        if (id.checked === true) {
+          console.log("entro");
+          if (ansCorrect[i] === j) {
+            goods++;
+          }
+        }
+      }
+    }
+  }
+
+  console.log(goods);
+  console.log(ansCorrect);
 }
